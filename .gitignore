@@ -1,0 +1,47 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Flutter/Dart/Pub
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+coverage/
+lib/generated_plugin_registrant.dart
+# Generated files
+*.g.dart
+*.freezed.dart
+
+# Melos
+.melos_tool/
+melos_*.iml
+
+# Exceptions to above rules.
+!/packages/*/build/
+!/apps/*/build/
+
+# IDEs
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.iml
+
+# FVM
+.fvm/flutter_sdk

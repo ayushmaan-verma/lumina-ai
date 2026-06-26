@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Melos Bootstrap",
+      "type": "shell",
+      "command": "melos bootstrap",
+      "problemMatcher": []
+    },
+    {
+      "label": "Melos Analyze",
+      "type": "shell",
+      "command": "melos run analyze",
+      "problemMatcher": [
+        "$dart-analyzer"
+      ]
+    },
+    {
+      "label": "Flutter Test",
+      "type": "shell",
+      "command": "melos run test",
+      "problemMatcher": []
+    }
+  ]
+}

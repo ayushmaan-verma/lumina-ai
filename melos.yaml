@@ -1,0 +1,37 @@
+name: lumina_ai
+
+packages:
+  - "apps/*"
+  - "packages/*"
+
+command:
+  bootstrap:
+    usePubspecOverrides: true
+  
+  version:
+    workspaceFallbackBuildNumber: 1
+
+scripts:
+  analyze:
+    run: dart analyze .
+    description: Run dart analyzer in the workspace.
+  
+  format:
+    run: dart format .
+    description: Format all dart code in the workspace.
+    
+  test:
+    run: melos exec --dir-exists="test" -- "flutter test"
+    description: Run all tests in the workspace.
+    
+  coverage:
+    run: melos exec --dir-exists="test" -- "flutter test --coverage"
+    description: Run all tests with coverage in the workspace.
+  
+  build_runner:
+    run: melos exec --depends-on="build_runner" -- "dart run build_runner build --delete-conflicting-outputs"
+    description: Run build_runner in all packages that depend on it.
+  
+  clean:
+    run: melos exec -- "flutter clean"
+    description: Run flutter clean in all packages.

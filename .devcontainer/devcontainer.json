@@ -1,0 +1,16 @@
+{
+  "name": "Lumina AI Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dart-code.flutter",
+        "dart-code.dart-code",
+        "rrthm.melos"
+      ]
+    }
+  }
+}
