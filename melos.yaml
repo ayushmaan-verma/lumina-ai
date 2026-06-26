@@ -35,3 +35,7 @@ scripts:
   clean:
     run: melos exec -- "flutter clean"
     description: Run flutter clean in all packages.
+  
+  doctor:
+    run: flutter doctor
+    description: Run flutter doctor.

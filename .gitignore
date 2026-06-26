@@ -31,9 +31,8 @@ lib/generated_plugin_registrant.dart
 .melos_tool/
 melos_*.iml
 
-# Exceptions to above rules.
-!/packages/*/build/
-!/apps/*/build/
+packages/*/build/
+apps/*/build/
 
 # IDEs
 .vscode/*

@@ -1,1 +1,5 @@
-import 'package:flutter_test/flutter_test.dart'; void main() { test('placeholder', () => expect(true, true)); }
+import 'package:flutter_test/flutter_test.dart';
+
+void main() {
+  test('placeholder', () => expect(true, true));
+}
