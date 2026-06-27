@@ -202,7 +202,7 @@ class _ShowcaseSidebar extends StatelessWidget {
   Widget build(BuildContext context) {
     return GlassSurface(
       recipe: GlassRecipe.navigation,
-      width: 220,
+      width: WindowSize.minSidebarWidth,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -332,7 +332,7 @@ class _ShowcaseRail extends StatelessWidget {
   Widget build(BuildContext context) {
     return GlassSurface(
       recipe: GlassRecipe.navigation,
-      width: 72,
+      width: WindowSize.railWidth,
       child: Column(
         children: [
           const SizedBox(height: AppSpacing.xl),
@@ -377,7 +377,7 @@ class _RailItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Tooltip(
       message: item.label,
-      waitDuration: const Duration(milliseconds: 400),
+      waitDuration: WindowSize.tooltipDelay,
       child: GestureDetector(
         onTap: onTap,
         child: AnimatedContainer(

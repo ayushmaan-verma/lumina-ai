@@ -1,22 +1,45 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'app_initializer.dart';
 import 'lumina_app.dart';
+import 'startup/platform_stage.dart';
+import 'startup/startup_pipeline.dart';
 
 /// Lumina AI — Application Bootstrap.
 ///
-/// Orchestrates the full application initialization sequence:
+/// The single entry point called from [main]. Orchestrates:
 ///
-/// 1. Ensures Flutter bindings are ready.
-/// 2. Runs [AppInitializer.initialize] for platform-level setup.
-/// 3. Wraps the root widget in a [ProviderScope] (Phase 3.1 minimum).
-/// 4. Calls [runApp] with [LuminaApp].
+/// 1. Flutter binding initialization.
+/// 2. [StartupPipeline] execution (ordered stage sequence).
+/// 3. Root widget inflation inside a [ProviderScope].
 ///
-/// Phase 3.1: Minimal bootstrap with ProviderScope.
-/// Phase 3.3: Will add provider overrides for DI configuration.
-/// Phase 3.4: Will add [runZonedGuarded] for error zone isolation.
-/// Phase 4:   Will add Firebase initialization before [runApp].
+/// # Pipeline Architecture
+///
+/// The [StartupPipeline] runs each registered [StartupStage] in order.
+/// To add a new initialization stage in a future phase, append it to the
+/// `stages` list. No other change to this file is needed:
+///
+/// ```dart
+/// // Phase 3.4 example (do not implement yet):
+/// StartupPipeline([
+///   const PlatformStage(),
+///   const LoggingStage(),
+///   const ErrorReportingStage(),
+/// ]);
+///
+/// // Phase 4 example (do not implement yet):
+/// StartupPipeline([
+///   const PlatformStage(),
+///   const LoggingStage(),
+///   const ErrorReportingStage(),
+///   const FirebaseStage(),
+/// ]);
+/// ```
+///
+/// # ProviderScope
+///
+/// Wraps the root widget so all Riverpod providers are available from the
+/// first frame. Phase 3.3 will populate [overrides:] with the DI tree.
 ///
 /// Usage (called exclusively from [main]):
 /// ```dart
@@ -25,10 +48,15 @@ import 'lumina_app.dart';
 Future<void> bootstrap() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await AppInitializer.initialize();
+  // Execute startup pipeline. Stages run sequentially.
+  const pipeline = StartupPipeline([
+    PlatformStage(),
+  ]);
+  await pipeline.execute();
 
   runApp(
     const ProviderScope(
+      // Phase 3.3: Add overrides: [...] for DI configuration.
       child: LuminaApp(),
     ),
   );
