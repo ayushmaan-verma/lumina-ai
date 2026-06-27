@@ -175,9 +175,9 @@ LSDS implementation complete. ✅
 
 ## 3.3 Dependency Injection
 
-* ⬜ Riverpod providers
-* ⬜ Repository registration
-* ⬜ Service registration
+* 🟩 Riverpod providers
+* 🟩 Repository registration
+* 🟩 Service registration
 
 ---
 

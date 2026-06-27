@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'lumina_app.dart';
+import '../di/di.dart';
 import 'startup/platform_stage.dart';
 import 'startup/startup_pipeline.dart';
 
@@ -55,8 +56,7 @@ Future<void> bootstrap() async {
   await pipeline.execute();
 
   runApp(
-    const ProviderScope(
-      // Phase 3.3: Add overrides: [...] for DI configuration.
+    const AppProviderScope(
       child: LuminaApp(),
     ),
   );
