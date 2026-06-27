@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 @immutable
 abstract final class AppColors {
   // --- Brand ---
+  static const Color transparent = Color(0x00000000);
   static const Color primary = Color(0xFF7C3AED);
   static const Color primaryHover = Color(0xFF8B5CF6);
   static const Color primaryPressed = Color(0xFF6D28D9);

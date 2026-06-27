@@ -33,11 +33,13 @@ class AdaptiveShell extends StatelessWidget {
     required this.selectedIndex,
     required this.onSectionSelected,
     required this.onToggleTheme,
+    required this.child,
   });
 
   final int selectedIndex;
   final ValueChanged<int> onSectionSelected;
   final VoidCallback onToggleTheme;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
@@ -46,16 +48,19 @@ class AdaptiveShell extends StatelessWidget {
         selectedIndex: selectedIndex,
         onSectionSelected: onSectionSelected,
         onToggleTheme: onToggleTheme,
+        child: child,
       ),
       medium: (_) => _MediumShell(
         selectedIndex: selectedIndex,
         onSectionSelected: onSectionSelected,
         onToggleTheme: onToggleTheme,
+        child: child,
       ),
       expanded: (_) => _ExpandedShell(
         selectedIndex: selectedIndex,
         onSectionSelected: onSectionSelected,
         onToggleTheme: onToggleTheme,
+        child: child,
       ),
     );
   }
@@ -70,19 +75,21 @@ class _CompactShell extends StatelessWidget {
     required this.selectedIndex,
     required this.onSectionSelected,
     required this.onToggleTheme,
+    required this.child,
   });
 
   final int selectedIndex;
   final ValueChanged<int> onSectionSelected;
   final VoidCallback onToggleTheme;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
     return ShellScaffold(
-      body: const Stack(
+      body: Stack(
         children: [
-          Positioned.fill(child: GlassBackground()),
-          WorkspacePlaceholder(),
+          const Positioned.fill(child: GlassBackground()),
+          child,
         ],
       ),
       bottomNavigationBar: ShellBottomNav(
@@ -103,11 +110,13 @@ class _MediumShell extends StatelessWidget {
     required this.selectedIndex,
     required this.onSectionSelected,
     required this.onToggleTheme,
+    required this.child,
   });
 
   final int selectedIndex;
   final ValueChanged<int> onSectionSelected;
   final VoidCallback onToggleTheme;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
@@ -123,7 +132,7 @@ class _MediumShell extends StatelessWidget {
                 onSelected: onSectionSelected,
                 onToggleTheme: onToggleTheme,
               ),
-              const Expanded(child: WorkspacePlaceholder()),
+              Expanded(child: child),
             ],
           ),
         ],
@@ -141,11 +150,13 @@ class _ExpandedShell extends StatelessWidget {
     required this.selectedIndex,
     required this.onSectionSelected,
     required this.onToggleTheme,
+    required this.child,
   });
 
   final int selectedIndex;
   final ValueChanged<int> onSectionSelected;
   final VoidCallback onToggleTheme;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
@@ -161,7 +172,7 @@ class _ExpandedShell extends StatelessWidget {
                 onSelected: onSectionSelected,
                 onToggleTheme: onToggleTheme,
               ),
-              const Expanded(child: WorkspacePlaceholder()),
+              Expanded(child: child),
             ],
           ),
         ],

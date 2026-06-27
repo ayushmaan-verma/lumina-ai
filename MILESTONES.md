@@ -166,10 +166,10 @@ LSDS implementation complete. ✅
 
 ## 3.2 Routing
 
-* ⬜ go_router setup
-* ⬜ Route definitions
-* ⬜ Route guards
-* ⬜ Deep linking support
+* 🟩 go_router setup
+* 🟩 Route definitions
+* 🟩 Route guards
+* 🟩 Deep linking support
 
 ---
 

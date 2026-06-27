@@ -218,7 +218,7 @@ class _SidebarNavItem extends StatelessWidget {
               vertical: AppSpacing.sm,
             ),
             decoration: BoxDecoration(
-              color: selected ? AppColors.surfaceActive : Colors.transparent,
+              color: selected ? AppColors.surfaceActive : AppColors.transparent,
               borderRadius: AppRadius.mediumRadius,
               border: selected
                   ? Border.all(color: AppColors.borderFocused)
@@ -323,7 +323,7 @@ class _RailNavItem extends StatelessWidget {
               vertical: AppSpacing.xxs,
             ),
             decoration: BoxDecoration(
-              color: selected ? AppColors.surfaceActive : Colors.transparent,
+              color: selected ? AppColors.surfaceActive : AppColors.transparent,
               borderRadius: AppRadius.mediumRadius,
             ),
             child: Icon(

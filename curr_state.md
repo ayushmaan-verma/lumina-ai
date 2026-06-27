@@ -195,22 +195,20 @@ We are now beginning Phase 3, which involves setting up the core application ent
 
 # Current Milestone
 
-## Phase 3.1 — App Shell ✅ COMPLETE
+## Phase 3.2 — Routing Architecture ✅ COMPLETE
 
 All milestones satisfied:
 
-* ✅ `main.dart` — Minimal entry point delegating to bootstrap.
-* ✅ `app/bootstrap.dart` — Initialization sequence with ProviderScope.
-* ✅ `app/app_config.dart` — Centralized app configuration, environment, feature flags.
-* ✅ `app/app_initializer.dart` — Platform chrome, orientation, and service initialization.
-* ✅ `app/lumina_app.dart` — Root ConsumerStatefulWidget with LuminaTheme + MaterialApp.
-* ✅ `navigation/app_shell.dart` — Composition root for adaptive navigation.
-* ✅ `navigation/adaptive_shell.dart` — Desktop/tablet/mobile adaptive layouts (LSDS-compliant).
-* ✅ `navigation/shell_scaffold.dart` — LSDS-correct Scaffold wrapper.
-* ✅ `core/constants/` and `core/config/` — Core barrel files.
-* ✅ 17 tests passing, zero analyzer issues.
+* ✅ `router/app_router.dart` — Centralized go_router configuration with shell routing.
+* ✅ `router/app_routes.dart` — Strongly typed route enumeration.
+* ✅ `router/route_names.dart` & `route_paths.dart` — Centralized route strings.
+* ✅ `router/route_extensions.dart` — BuildContext extensions for typed navigation.
+* ✅ `ui/unknown_route_page.dart` & `ui/error_route_page.dart` — LSDS-compliant error handling.
+* ✅ `ui/placeholder_page.dart` & `ui/settings_placeholder.dart` — Shell branch placeholders.
+* ✅ `navigation/app_shell.dart` — Updated to consume StatefulNavigationShell.
+* ✅ go_router integrated successfully without analyzer warnings.
 
-Phase 3.2 (Routing Architecture) is the next milestone.
+Phase 3.3 (Dependency Injection) is the next milestone.
 
 ---
 
@@ -429,12 +427,11 @@ Phase 3 succeeds when:
 
 # Immediate Next Tasks
 
-Phase 3.1 is complete. The next steps are Phase 3.2 and beyond:
+Phase 3.2 is complete. The next steps are Phase 3.3 and beyond:
 
-1. (**Phase 3.2**) Set up go_router routing architecture with shell routes and placeholder destinations.
-2. (**Phase 3.3**) Configure Riverpod provider hierarchy, repository registration, service registration.
-3. (**Phase 3.4**) Implement logging framework and global error handling zone (`runZonedGuarded`).
-4. Validate application launches on all supported platforms.
+1. (**Phase 3.3**) Configure Riverpod provider hierarchy, repository registration, service registration.
+2. (**Phase 3.4**) Implement logging framework and global error handling zone (`runZonedGuarded`).
+3. Validate application launches on all supported platforms.
 
 ---
 

@@ -334,10 +334,7 @@ class _GradientLibrary extends StatelessWidget {
                   height: 56,
                   decoration: BoxDecoration(
                     gradient: grad,
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(AppRadius.card),
-                      topRight: Radius.circular(AppRadius.card),
-                    ),
+                    borderRadius: AppRadius.cardRadiusTop,
                   ),
                 ),
                 Padding(

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:lumina_design/lumina_design.dart';
 
 import 'startup_stage.dart';
 
@@ -36,18 +36,18 @@ final class PlatformStage implements StartupStage {
   /// Sets status bar and system navigation bar to transparent so the Lumina
   /// dark background extends edge-to-edge on Android and iOS.
   ///
-  /// Note: [Colors.transparent] and [Brightness] values here are intentional
+  /// Note: [AppColors.transparent] and [Brightness] values here are intentional
   /// system-API constants; they do not originate from LSDS because LSDS does
   /// not govern OS chrome APIs.
   Future<void> _configurePlatformChrome() async {
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
+        statusBarColor: AppColors.transparent,
         statusBarIconBrightness: Brightness.light,
         statusBarBrightness: Brightness.dark,
-        systemNavigationBarColor: Colors.transparent,
+        systemNavigationBarColor: AppColors.transparent,
         systemNavigationBarIconBrightness: Brightness.light,
-        systemNavigationBarDividerColor: Colors.transparent,
+        systemNavigationBarDividerColor: AppColors.transparent,
       ),
     );
 

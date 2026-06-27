@@ -39,4 +39,6 @@ abstract final class AppRadius {
       BorderRadius.all(Radius.circular(input));
   static const BorderRadius canvasRadius =
       BorderRadius.all(Radius.circular(workspaceCanvas));
+  static const BorderRadius cardRadiusTop =
+      BorderRadius.vertical(top: Radius.circular(card));
 }

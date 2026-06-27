@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lumina_design/lumina_design.dart';
 
-import '../navigation/app_shell.dart';
+import '../router/router.dart';
 import 'app_config.dart';
 import 'lifecycle/app_lifecycle_observer.dart';
 
@@ -86,6 +86,12 @@ class _LuminaAppState extends ConsumerState<LuminaApp> {
   }
 
   // ---------------------------------------------------------------------------
+  // Router
+  // ---------------------------------------------------------------------------
+  
+  late final _router = AppRouter.createRouter(onToggleTheme: _toggleTheme);
+
+  // ---------------------------------------------------------------------------
   // Build
   // ---------------------------------------------------------------------------
 
@@ -93,7 +99,7 @@ class _LuminaAppState extends ConsumerState<LuminaApp> {
   Widget build(BuildContext context) {
     return LuminaTheme(
       data: _themeData,
-      child: MaterialApp(
+      child: MaterialApp.router(
         // -----------------------------------------------------------------------
         // Application Identity
         // -----------------------------------------------------------------------
@@ -120,10 +126,10 @@ class _LuminaAppState extends ConsumerState<LuminaApp> {
         supportedLocales: const [Locale('en', 'US')],
 
         // -----------------------------------------------------------------------
-        // Root Shell
+        // Routing
         // -----------------------------------------------------------------------
-        // Phase 3.2 replaces [home:] with [routerConfig:] (go_router).
-        home: AppShell(onToggleTheme: _toggleTheme),
+        // Phase 3.2 uses routerConfig (go_router).
+        routerConfig: _router,
       ),
     );
   }

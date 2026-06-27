@@ -336,10 +336,7 @@ class _ColorChip extends StatelessWidget {
             height: 64,
             decoration: BoxDecoration(
               color: color,
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(AppRadius.card),
-                topRight: Radius.circular(AppRadius.card),
-              ),
+              borderRadius: AppRadius.cardRadiusTop,
             ),
           ),
           Padding(
