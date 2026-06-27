@@ -158,9 +158,9 @@ LSDS implementation complete. ✅
 
 ## 3.1 App Shell
 
-* ⬜ Entry point
-* ⬜ App configuration
-* ⬜ Navigation shell
+* 🟩 Entry point
+* 🟩 App configuration
+* 🟩 Navigation shell
 
 ---
 

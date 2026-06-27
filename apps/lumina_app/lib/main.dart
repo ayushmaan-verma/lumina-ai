@@ -1,22 +1,12 @@
 // ignore_for_file: avoid_void_async
 
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'app/bootstrap.dart';
 
-import 'lumina_app.dart';
-
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  // Lock status bar to transparent for immersive LSDS experience.
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      statusBarIconBrightness: Brightness.light,
-      systemNavigationBarColor: Colors.transparent,
-      systemNavigationBarIconBrightness: Brightness.light,
-    ),
-  );
-
-  runApp(const LuminaApp());
-}
+/// Lumina AI — Application Entry Point.
+///
+/// This file is intentionally minimal. All initialization is delegated to
+/// [bootstrap] to maintain a clean separation between the Dart VM entry point
+/// and the application startup sequence.
+///
+/// Do NOT add business logic, imports, or configuration here.
+Future<void> main() async => bootstrap();

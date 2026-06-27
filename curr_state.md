@@ -195,22 +195,22 @@ We are now beginning Phase 3, which involves setting up the core application ent
 
 # Current Milestone
 
-## Phase 2 — Design System Foundation (LSDS) ✅ COMPLETE
+## Phase 3.1 — App Shell ✅ COMPLETE
 
 All milestones satisfied:
 
-* ✅ 2.1 Design Tokens (13 token categories: colors, typography, spacing, radius, blur, shadows, opacity, elevation, durations, curves, gradients, borders, z-index, icons)
-* ✅ 2.2 Theme Engine (LuminaThemeData, LuminaTheme, FlutterThemeAdapter, dark + light)
-* ✅ 2.3 Adaptive Layout (4-tier breakpoints, AdaptiveLayout, WindowSize, DeviceClass)
-* ✅ 2.4 Animation System (MotionTokens, AppTransitions)
-* ✅ Glass System (GlassRecipe, GlassSurface, GlassBackground, GlassDecoration)
-* ✅ Surface System (SurfaceLevel, SurfaceStyle, AnimatedSurface)
-* ✅ 9 Foundation Widgets
-* ✅ 3 Context/Color/Responsive Extensions
-* ✅ LSDS Showcase App (6 scenes, adaptive shell)
-* ✅ 57 tests passing, zero analyzer issues
+* ✅ `main.dart` — Minimal entry point delegating to bootstrap.
+* ✅ `app/bootstrap.dart` — Initialization sequence with ProviderScope.
+* ✅ `app/app_config.dart` — Centralized app configuration, environment, feature flags.
+* ✅ `app/app_initializer.dart` — Platform chrome, orientation, and service initialization.
+* ✅ `app/lumina_app.dart` — Root ConsumerStatefulWidget with LuminaTheme + MaterialApp.
+* ✅ `navigation/app_shell.dart` — Composition root for adaptive navigation.
+* ✅ `navigation/adaptive_shell.dart` — Desktop/tablet/mobile adaptive layouts (LSDS-compliant).
+* ✅ `navigation/shell_scaffold.dart` — LSDS-correct Scaffold wrapper.
+* ✅ `core/constants/` and `core/config/` — Core barrel files.
+* ✅ 17 tests passing, zero analyzer issues.
 
-Phase 3 (Application Bootstrap) is the next phase.
+Phase 3.2 (Routing Architecture) is the next milestone.
 
 ---
 
@@ -429,14 +429,12 @@ Phase 3 succeeds when:
 
 # Immediate Next Tasks
 
-Phase 2 is complete. The next steps are Phase 3:
+Phase 3.1 is complete. The next steps are Phase 3.2 and beyond:
 
-1. Create application entry point and configuration.
-2. Set up go_router routing architecture.
-3. Configure Riverpod dependency injection.
-4. Implement logging and error handling framework.
-5. Create navigation shell consuming LSDS.
-6. Validate application launches on all supported platforms.
+1. (**Phase 3.2**) Set up go_router routing architecture with shell routes and placeholder destinations.
+2. (**Phase 3.3**) Configure Riverpod provider hierarchy, repository registration, service registration.
+3. (**Phase 3.4**) Implement logging framework and global error handling zone (`runZonedGuarded`).
+4. Validate application launches on all supported platforms.
 
 ---
 

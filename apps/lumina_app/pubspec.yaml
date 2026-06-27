@@ -1,5 +1,5 @@
 name: lumina_app
-description: Lumina AI — LSDS Showcase Application.
+description: Lumina AI — Enterprise AI Workspace Application.
 version: 0.1.0
 publish_to: none
 
@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   lumina_design:
     path: ../../packages/lumina_design
+  flutter_riverpod: ^2.5.1
 
 dev_dependencies:
   flutter_test:
