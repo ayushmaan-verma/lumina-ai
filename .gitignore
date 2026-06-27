@@ -21,6 +21,7 @@
 .pub-cache/
 .pub/
 build/
+packages/*/pubspec.lock
 coverage/
 lib/generated_plugin_registrant.dart
 # Generated files
